@@ -27,7 +27,7 @@ defmodule Rethink.Function do
     create_function(args, exper)
   end
 
-  def create_function(args, block) do
+  defp create_function(args, block) do
     {:ok, scope} = Scope.start_link
     func = create_function(args, block, scope)
     Scope.close(scope)

@@ -1,6 +1,8 @@
 defmodule Rethink.Scope do
   import GenServer
 
+  @moduledoc false
+
   def start_link(opts \\ []) do
     Rethink.Scope.Server.start_link opts
   end
@@ -28,6 +30,8 @@ end
 
 defmodule Rethink.Scope.Server do
   use GenServer
+
+  @moduledoc false
 
   def start_link(opts \\ []) do
     # state: {stack, level, next_id}

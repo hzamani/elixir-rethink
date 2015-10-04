@@ -1,4 +1,6 @@
 defmodule RQL do
+  @moduledoc false
+
   defmacro defterm(name, code, args, opts \\ []) do
     guard = Keyword.get(opts, :when, true)
     block = Keyword.get(opts, :do, args)
